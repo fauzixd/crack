@@ -192,7 +192,7 @@ def login_lagi334():
 #------------------[ BAGIAN-MENU ]----------------#
 def menu(my_name,my_id):
 	try:
-		token = open('.token1.txt','r').read()
+		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
 	except IOError:
 		print('[×] Cookies Kadaluarsa ')
