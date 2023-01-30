@@ -165,8 +165,8 @@ def login():
 			exit()
 	except IOError:
 		login_lagi334()
+
 def login_lagi334():
-	def login_lagi334():
 	try:
 		os.system('clear')
 		banner()
