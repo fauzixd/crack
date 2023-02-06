@@ -247,102 +247,129 @@ def error():
 	back()
 #-----------------[ HASIL-CRACK ]-----------------#
 def result():
-	print(f'<•> 1. Hasil {h}OK{x} Anda ')
-	print(f'<•> 2. Hasil {k}CP{x} Anda ')
-	print('<•> 3. Kembali	')
-	kz = input(f'\n<•> Pilih : ')
-	if kz in ['2']:
-		try:vin = os.listdir('CP')
+	cek = '# CEK RESULT CRACK'
+	sol().print(mark(cek, style='green'))
+	kayes = '[bold cyan][01] CHECK CP RESULTS\n[02] CHECK OK RESULTS\n[00] BACK TO MENU[/bold cyan]'
+	kis = nel(kayes, style='cyan')
+	cetak(nel(kis, title='RESULTS'))
+	kz = input(x+'['+p+'f'+x+'] Choose : ')
+	if kz in ['1','01']:
+		try:vin = os.listdir('/sdcard/4MBF-DATA/CP')
 		except FileNotFoundError:
-			print('<•> File Tidak Di Temukan ')
-			time.sleep(3)
-			back()
-		if len(vin)==0:
-			print('<•> Anda Tidak Memiliki Hasil CP ')
-			time.sleep(2)
-			back()
-		else:
-			cih = 0
-			lol = {}
-			for isi in vin:
-				try:hem = open('CP/'+isi,'r').readlines()
-				except:continue
-				cih+=1
-				if cih<10:
-					nom = ''+str(cih)
-					lol.update({str(cih):str(isi)})
-					lol.update({nom:str(isi)})
-					print(f'<•> %s. %s ({k} %s {x}Idz )'%(nom,isi,len(hem)))
-				else:
-					lol.update({str(cih):str(isi)})
-					print('['+str(cih)+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
-			geeh = input('\n<•> Pilih : ')
-			try:geh = lol[geeh]
-			except KeyError:
-				print('<•> Pilih Yang Bener Kontol ')
-				back()
-			try:lin = open('CP/'+geh,'r').read().splitlines()
-			except:
-				print('<•> File Tidak Di Temukan ')
-				time.sleep(2)
-				back()
-			nocp=0
-			for cpku in range(len(lin)):
-				cpkuni=lin[nocp].split('|')
-				print(f'{x}<•> {k}{cpkuni[0]}|{cpkuni[1]}')
-				nocp +=1
-			print('')
-			input(f'{x}[{m} Klik Enter{x} ]')
-			back()
-	elif kz in ['1']:
-		try:vin = os.listdir('OK')
-		except FileNotFoundError:
-			print('<•> File Tidak Di Temukan ')
+			gada = '# STORAGE NOT FOUND '
+			sol().print(mark(gada, style='red'))
 			time.sleep(2)
 			back()
 		if len(vin)==0:
-			print('<•> Anda Tidak Mempunyai File OK ')
+			haha = '# YOU DONT HAVE CP RESULTS'
+			sol().print(mark(haha, style='yellow'))
 			time.sleep(2)
 			back()
 		else:
+			gerr = '# YOUR CP RESULT'
+			sol().print(mark(gerr, style='cyan'))
 			cih = 0
 			lol = {}
 			for isi in vin:
-				try:hem = open('OK/'+isi,'r').readlines()
+				try:hem = open('/sdcard/4MBF-DATA/CP/'+isi,'r').readlines()
 				except:continue
 				cih+=1
 				if cih<10:
 					nom = '0'+str(cih)
 					lol.update({str(cih):str(isi)})
 					lol.update({nom:str(isi)})
-					print(f'<•> %s. %s ( {h}%s{x} Idz )'%(nom,isi,len(hem)))
+					print('['+nom+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
 				else:
 					lol.update({str(cih):str(isi)})
-					print(f'<•> %s. %s ({h} %s {x}Idz )'%(cih,isi,(len(hem))))
-			geeh = input(f'\nPilih : ')
+					print('['+str(cih)+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
+			gerr2 = '# SELECT RESULTS TO SHOW'
+			sol().print(mark(gerr2, style='green'))
+			geeh = input(x+'['+p+'f'+x+'] choose : ')
 			try:geh = lol[geeh]
 			except KeyError:
-				print('<•> Pilih Yang Bener Kontol ')
-				back()
-			try:lin = open('OK/'+geh,'r').read().splitlines()
+				ric = '# OPTION NOT IN THE MENU'
+				sol().print(mark(ric, style='red'))
+				exit()
+			try:lin = open('/sdcard/4MBF-DATA/CP/'+geh,'r').read().splitlines()
 			except:
-				print('<•> File Tidak Di Temukan ')
+				hehe = '# FILE NOT FOUND, CHECK AND TRY AGAIN'
+				sol().print(mark(hehe, style='red'))
 				time.sleep(2)
 				back()
+			akun = '# YOUR CP ACCOUNT RESULT'
+			sol().print(mark(akun, style='cyan'))
 			nocp=0
 			for cpku in range(len(lin)):
 				cpkuni=lin[nocp].split('|')
-				print('')
-				print(f'{x}<•> {h}{cpkuni[0]}|{cpkuni[1]}|{cpkuni[2]}')
+				cpkuh=f'# ID : {cpkuni[0]} PASSWORD : {cpkuni[1]}'
+				sol().print(mark(cpkuh,style="yellow"))
 				nocp +=1
-			print('')
-			input(f'{x}[{m} Klik Enter{x} ]')
+			akun2 = '# YOUR CP ACCOUNT RESULT'
+			sol().print(mark(akun, style='cyan'))
+			input('[PRESS ENTER TO RETURN]')
 			back()
-	elif kz in ['3']:
+	elif kz in ['2','02']:
+		try:vin = os.listdir('/sdcard/4MBF-DATA/OK')
+		except FileNotFoundError:
+			gada = '# STORAGE NOT FOUND '
+			sol().print(mark(gada, style='red'))
+			time.sleep(2)
+			back()
+		if len(vin)==0:
+			haha = '# YOU DONT HAVE OK RESULTS'
+			sol().print(mark(haha, style='yellow'))
+			time.sleep(2)
+			back()
+		else:
+			gerr = '# YOUR OK RESULT'
+			sol().print(mark(gerr, style='green'))
+			cih = 0
+			lol = {}
+			for isi in vin:
+				try:hem = open('/sdcard/4MBF-DATA/OK/'+isi,'r').readlines()
+				except:continue
+				cih+=1
+				if cih<100:
+					nom = '0'+str(cih)
+					lol.update({str(cih):str(isi)})
+					lol.update({nom:str(isi)})
+					print('['+nom+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
+				else:
+					lol.update({str(cih):str(isi)})
+					print('['+str(cih)+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
+			gerr2 = '# SELECT RESULTS TO SHOW'
+			sol().print(mark(gerr2, style='green'))
+			geeh = input(x+'['+p+'f'+x+'] Choose : ')
+			try:geh = lol[geeh]
+			except KeyError:
+				ric = '# OPTION NOT IN THE MENU'
+				sol().print(mark(ric, style='red'))
+				exit()
+			try:lin = open('/sdcard/4MBF-DATA/OK/'+geh,'r').read().splitlines()
+			except:
+				hehe = '# FILE NOT FOUND, CHECK AND TRY AGAIN'
+				sol().print(mark(hehe, style='red'))
+				time.sleep(2)
+				back()
+			akun = '# YOUR OK ACCOUNT RESULT'
+			sol().print(mark(akun, style='green'))
+			nocp=0
+			for cpku in range(len(lin)):
+				cpkuni=lin[nocp].split('|')
+				cpkuh=f'# ID : {cpkuni[0]} PASSWORD : {cpkuni[1]}'
+				sol().print(mark(cpkuh,style="green"))
+				print(f'{hh}COOKIE : {x}{cpkuni[2]}')
+				nocp +=1
+			akun2 = '# YOUR OK ACCOUNT RESULT'
+			sol().print(mark(akun, style='green'))
+			input('[PRESS ENTER TO RETURN]')
+			back()
+	elif kz in ['0','00']:
 		back()
 	else:
-		print('<•> Pilih Yang Bener Kontol ')
-		back()
+		ric = '# OPTION NOT IN THE MENU'
+		sol().print(mark(ric, style='red'))
+		exit()
 #-------------------[ CRACK-PUBLIK ]----------------#
 def dump_massal():
 	try:
