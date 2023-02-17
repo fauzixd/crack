@@ -61,11 +61,11 @@ for xd in range(10000):
 
 	aa='Mozilla/5.0 (Linux; U; Android'
 	b=random.choice(['6','7','8','9','10','11','12'])
-	c='SM-M515F)'
+	c='RMX2180)'
 	d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
 	e=random.randrange(1, 999)
 	f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
-	g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.125'
+	g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88'
 	h=random.randrange(73,104)
 	i='0'
 	j=random.randrange(4200,4900)
